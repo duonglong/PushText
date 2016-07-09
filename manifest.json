@@ -1,0 +1,22 @@
+{
+	"name": "HSS Push Text Extension",
+	"description": "Push text between client's tabs",
+	"version": "1.0",
+	"permissions": [
+		"tabs", "http://*/*", "https://*/*"
+	],
+	"background":{
+		"scripts": ["background.js"]
+	},
+	"manifest_version": 2,
+	
+	"browser_action": {
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content.js"],
+			"run_at": "document_idle"
+		}
+	]
+}
